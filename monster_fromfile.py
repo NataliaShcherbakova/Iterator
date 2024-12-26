@@ -44,8 +44,11 @@ class MonsterCollection:
     def load_monsters_from_file(self, filename):
         with open(filename, 'r', encoding='utf-8') as file:
             for line in file:
-                name, monster_type, element = line.strip().split(';')
-                self.add_monster(Monster(name, monster_type, element))
+                monster_data = line.strip().split(';')
+                if len(monster_data) != 3:
+                    raise TypeError(
+                        f"Ошибка в строке: '{line.strip()}'. Ожидалось 3 параметра монстр;тип;стихия, но получено {len(monster_data)}.")
+                self.add_monster(Monster(*monster_data))
 
 
 # Итератор для коллекции монстров
