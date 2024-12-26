@@ -67,7 +67,6 @@ if __name__ == "__main__":
         print(monster)
  #       print(iter(monster_collection))
 
-
     # Запрашиваем стихию
     selected_element = input("\nВведите стихию для выбора монстров: ")
 
@@ -81,4 +80,3 @@ if __name__ == "__main__":
             print(monster)
     else:
         print(f"\nНет монстров со стихией '{selected_element}'.")
-
